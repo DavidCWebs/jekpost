@@ -11,7 +11,7 @@ typedef struct {
 	char *author;
 } MetaData;
 
-MetaData *createMetaData(char *title, char *categories, char *author);
+//MetaData *createMetaData(char *title, char *categories, char *author);
 int storeToFile(char *filepath, MetaData *m);
 MetaData *setMetaData();
 void deleteMetaData(MetaData *m);

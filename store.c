@@ -1,17 +1,5 @@
 #include "store.h"
-#include "input.h"
-
-//MetaData *createMetaData(char *title, char *categories, char *author)
-//{
-//	MetaData *m = malloc(sizeof(MetaData));
-//	m->title = malloc(strlen(title) + 1);
-//	strcpy(m->title, title);
-//	m->categories = malloc(strlen(categories) + 1);
-//	strcpy(m->categories, categories);
-//	m->author = malloc(strlen(author) + 1);
-//	strcpy(m->author, author);
-//	return m;
-//}
+//#include "utilities.h"
 
 int storeToFile(char *filepath, MetaData *m)
 {
@@ -40,6 +28,10 @@ int storeToFile(char *filepath, MetaData *m)
 			rc = 1;
 		}
 		if(fputs(m->categories, fOut) != EOF) {
+			rc = 1;
+		}
+		fputc('\n', fOut);
+		if(fputs("layout: post", fOut) != EOF) {
 			rc = 1;
 		}
 		fputc('\n', fOut);
